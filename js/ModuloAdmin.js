@@ -251,7 +251,7 @@ function EditUser(){
           .then(respuestafinal=>{
              if (respuestafinal.estado === "Success"){
                 alert("Sus datos han sido modificados exitosamente")
-                location.href("VisualizarPosts.html")
+                location.href = "VisualizarUsuarios.html"
              }
              else if (respuestafinal.estado === "Fallo"){
                 alert("Revise la contraseña. Recuerde que debe de tener 8 caracteres como minimo, letras mayúsculas y minúsculas y un símbolo especial(\"@#$%^&*()-+?_=,<>/\"\" \") ")

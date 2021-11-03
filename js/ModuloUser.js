@@ -145,7 +145,7 @@ function ModificarUsuario(){
              if (respuestafinal.estado === "Success"){
                 alert("Sus datos han sido modificados exitosamente")
                 sessionStorage.setItem("USER", username)
-                window.location.reload()
+                location.href = "Muro.html"
              }
              else if (respuestafinal.estado === "Fallo"){
                 alert("Revise la contraseña. Recuerde que debe de tener 8 caracteres como minimo, letras mayúsculas y minúsculas y un símbolo especial(\"@#$%^&*()-+?_=,<>/\"\" \") ")
