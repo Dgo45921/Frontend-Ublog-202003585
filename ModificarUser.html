@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+     <script src="js/ModuloUser.js"></script>
+</head>
+<body onload="GetUserData()">
+
+<ul>
+
+    <li><a href="Muro.html">Muro</a></li>
+    <li><a href="MisPosts.html">Ver mis posts</a></li>
+    <li><a href="CreaPost.html">Crear post</a></li>
+    <li><a href="RankingPosts.html">Rankings posts</a></li>
+    <li><a href="ModificarUser.html">Modificar Perfil</a></li>
+    <li style="float:right"><a class="active" href="Inicio.html">Cerrar sesión</a></li>
+</ul>
+
+ <div class="bienvenidauser">
+        <p id="nombreuser"> </p>
+    </div>
+
+
+
+<div class="FormModificar">
+
+     <form>
+  <input type="text"  id="name" placeholder="Ingresa tu nuevo nombre" size="40"  style="font-size:16pt;"><br><br>
+
+         <p> Ingresa tu género</p>
+  <select id="gender"  style="font-size:16pt;">
+   <option value="M">M</option>
+   <option value="F">F</option>
+</select>       <br><br><br>
+
+  <input type="text"  id="username"  placeholder="Ingresa tu nuevo nombre de usuario" size="30"  style="font-size:16pt;" ><br> <br>
+  <input type="text"  id="email"  placeholder="Ingresa el nuevo email" size="40"  style="font-size:16pt;"><br><br>
+  <input type="text"  id="password"  placeholder="Ingresa tu nueva contraseña" size="40"  style="font-size:16pt;"><br><br>
+  <input type="text"  id="password2" placeholder="Ingresa tu nueva contraseña nuevamente" size="40"  style="font-size:16pt;"><br><br>
+
+
+  <button onclick="ModificarUsuario()"   type="button"> Modificar Perfil </button>
+</form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>

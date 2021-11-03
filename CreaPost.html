@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+      <script src="js/ModuloUser.js"></script>
+</head>
+<body onload="EscribirBienvenida()">
+
+<ul>
+
+   <li><a href="Muro.html">Muro</a></li>
+    <li><a href="MisPosts.html">Ver mis posts</a></li>
+    <li><a href="CreaPost.html">Crear post</a></li>
+    <li><a href="RankingPosts.html">Rankings posts</a></li>
+    <li><a href="ModificarUser.html">Modificar Perfil</a></li>
+    <li style="float:right"><a class="active" href="Inicio.html">Cerrar sesión</a></li>
+</ul>
+
+ <div class="bienvenidauser">
+        <p id="nombreuser"> </p>
+    </div>
+
+
+
+
+<div class="FormModificar">
+
+     <form>
+
+         <p>¿Qué vas a publicar?</p>
+  <select id="type"  style="font-size:16pt;">
+   <option value="images" id="image">Imagen</option>
+   <option value="videos" id= "video">Videos</option>
+</select>       <br><br><br>
+
+  <input type="text"  id="url"  placeholder="Ingresa el link de la imagen o video" size="40"  style="font-size:16pt;" ><br> <br>
+  <input type="text"  id="category"  placeholder="Ingresa la categoría de tu post. Ejemplo(perros, carros, etc...)" size="40"  style="font-size:16pt;"><br><br>
+
+
+  <button onclick="CrearPost()"  type="button" > Crear post </button>
+</form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>

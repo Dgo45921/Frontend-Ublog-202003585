@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+     <script src="js/ModuloAdmin.js"></script>
+</head>
+<body onload="GetPostData()">
+
+<ul>
+
+    <li><a href="ModuloAdmin.html">Regresar</a></li>
+    <li style="float:right"><a class="active" href="Inicio.html">Cerrar sesión</a></li>
+</ul>
+
+ <div class="bienvenidauser">
+        <p id="nombreuser"> </p>
+    </div>
+
+
+
+<div class="FormModificar">
+
+     <form>
+
+         <p>¿Qué tipo de contenido será?</p>
+  <select id="type"  style="font-size:16pt;">
+   <option value="images" id="image">Imagen</option>
+   <option value="videos" id= "video">Videos</option>
+</select>       <br><br><br>
+
+  <input type="text"  id="url"  placeholder="Ingresa el link de la imagen o video" size="40"  style="font-size:16pt;" ><br> <br>
+  <input type="text"  id="category"  placeholder="Ingresa la categoría del post" size="40"  style="font-size:16pt;"><br><br>
+    <input type="text"  id="author"  placeholder="Ingresa el nuevo autor del post" size="40"  style="font-size:16pt;"><br><br>
+
+
+   <input type="datetime-local" id="date" min="2021-01-01T00:00"> <br> <br>
+
+
+         <script>
+             var today = new Date();
+             var dd = today.getDate();
+             var mm = today.getMonth() + 1; //January is 0!
+             var yyyy = today.getFullYear();
+             var hh = today.getHours()
+             var MM = today.getMinutes()
+
+                if (MM<10){
+                    MM = '0' + MM
+                }
+
+                if (hh<10){
+                    hh = '0' + hh
+                }
+
+                if (dd < 10) {
+                     dd = '0' + dd;
+                            }
+
+                if (mm < 10) {
+                     mm = '0' + mm;
+                            }
+
+             today = yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + MM;
+                console.log(today)
+             document.getElementById("date").setAttribute("max", today);
+
+         </script>
+
+
+  <button onclick="EditPost()"  type="button" > Actualizar post </button>
+</form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
