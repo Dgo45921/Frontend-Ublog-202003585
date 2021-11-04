@@ -448,11 +448,10 @@ function EditPost(){
     var category = document.getElementById("category").value
     var author = document.getElementById("author").value
     var date = (document.getElementById("date").value).replace("T", "  ")
-    var datefinal = date.replace("-", "/")
-    var datefinal2 = datefinal.replace("-", "/")
-    var cadena = datefinal2.split(" ")
+    var datefinal = date.replaceAll("-", "/")
+    var cadena = datefinal.split(" ")
     var datos_fecha = cadena[0].split("/")
-    var fechaoficial = datos_fecha[2] + datos_fecha[1] + datos_fecha[0] + cadena[1]
+    var fechaoficial = datos_fecha[2] + "/" + datos_fecha[1] + "/"  + datos_fecha[0] + " " + cadena[1]
     var Actualizar = {
         'type': type,
         'url': url,
