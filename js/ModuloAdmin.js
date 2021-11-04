@@ -448,12 +448,13 @@ function EditPost(){
     var category = document.getElementById("category").value
     var author = document.getElementById("author").value
     var date = (document.getElementById("date").value).replace("T", "  ")
+    var datefinal = date.replace("-", "/")
     var Actualizar = {
         'type': type,
         'url': url,
         'category': category,
         'author': author,
-        'date': date
+        'date': datefinal
     }
     if (category!=="" && author!=="" && date!=="" ){
         fetch(`https://ublog-202003585.herokuapp.com/EditPost/${id}` ,{
