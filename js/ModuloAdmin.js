@@ -467,7 +467,7 @@ function EditPost(){
           .then(respuesta => respuesta.json())
           .catch(error => {
               console.error('Error:', error)
-              alert("Ocurrio un error, ver la consola")
+              alert("Por favor revisa el enlace que has ingresado")
           })
             .then(respuestafinal =>{
                 if (respuestafinal.estado === "exito"){
