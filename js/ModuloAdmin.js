@@ -447,7 +447,7 @@ function EditPost(){
     var url = document.getElementById("url").value
     var category = document.getElementById("category").value
     var author = document.getElementById("author").value
-    var date = (document.getElementById("date").value).replace("T", "  ")
+    var date = (document.getElementById("date").value).replace("T", " ")
     var datefinal = date.replaceAll("-", "/")
     var cadena = datefinal.split(" ")
     var datos_fecha = cadena[0].split("/")
