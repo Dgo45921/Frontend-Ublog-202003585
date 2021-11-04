@@ -447,7 +447,7 @@ function EditPost(){
     var url = document.getElementById("url").value
     var category = document.getElementById("category").value
     var author = document.getElementById("author").value
-    var date = (document.getElementById("date").value).replace("T", " at ")
+    var date = (document.getElementById("date").value).replace("T", "  ")
     var Actualizar = {
         'type': type,
         'url': url,
@@ -455,7 +455,7 @@ function EditPost(){
         'author': author,
         'date': date
     }
-    if ( isURL(url) && category!=="" && author!=="" && date!=="" ){
+    if (category!=="" && author!=="" && date!=="" ){
         fetch(`https://ublog-202003585.herokuapp.com/EditPost/${id}` ,{
          method: "PUT",
          body: JSON.stringify(Actualizar),
@@ -474,8 +474,11 @@ function EditPost(){
                     alert("Datos modificados exitosamente")
                     location.href = "VisualizarPosts.html"
                 }
-                else {
+                else if (respuestafinal.estado ==="NonExistent") {
                     alert("EL usuario al que desea asignarle el post no existe")
+                }
+                else if (respuestafinal.estado ==="invalid"){
+                    alert("Revise que el link sea válido")
                 }
             })
     }
@@ -665,12 +668,3 @@ function GeneratePDF2(){
     doc.save("Reporte_Posts")
 }
 
-function isURL(str) {
-  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-  '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
-  '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-  '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-  '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-  '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-  return pattern.test(str);
-}

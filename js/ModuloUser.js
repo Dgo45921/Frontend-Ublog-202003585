@@ -175,19 +175,14 @@ function CrearPost() {
    var type = document.getElementById("type").value
    var url = document.getElementById("url").value
    var category = document.getElementById("category").value
-   var today = new Date();
-   var date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
-   var time = today.getHours() + ":" + today.getMinutes();
-   var dateTime = date + ' at ' + time;
    var NuevoPost = {
       'type': type,
       'url': url,
-      'date': dateTime,
       'category': category,
       'author': sessionStorage.getItem("USER")
    }
    console.log(NuevoPost)
-   if (type !== "" && category !== "" && isURL(url)) {
+   if (type !== "" && category !== "") {
          fetch("https://ublog-202003585.herokuapp.com/CreaPost", {
          method: "POST",
          body: JSON.stringify(NuevoPost),
@@ -205,7 +200,8 @@ function CrearPost() {
              if (respuestafinal.estado === "Success") {
                 alert("Post agregado correctamente")
                   window.location.reload()
-             } else {
+             }
+             else {
                 alert("Revise que la url sea valida para la categoría que seleccionó")
              }
           })
@@ -220,15 +216,7 @@ function EscribirBienvenida(){
    document.getElementById("nombreuser").innerHTML = "Bienvenido: " + sessionStorage.getItem("USER").toString()
 }
 
-function isURL(str) {
-  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-  '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
-  '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-  '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-  '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-  '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-  return pattern.test(str);
-}
+
 
 
 function Like(idboton){
