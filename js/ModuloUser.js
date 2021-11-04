@@ -202,7 +202,7 @@ function CrearPost() {
                   window.location.reload()
              }
              else {
-                alert("Revise que la url sea valida para la categoría que seleccionó")
+                alert("Revise que la url ingresada sea válida")
              }
           })
    } else {
