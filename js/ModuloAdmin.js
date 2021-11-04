@@ -259,6 +259,9 @@ function EditUser(){
              else if(respuestafinal.estado ==="repetido"){
                 alert("El nombre de usuario o email que usted ingresó ya se encuentra registrado")
              }
+             else if(respuestafinal.estado ==="invalid"){
+                alert("Ingrese un email válido")
+             }
           })
    }
    else {

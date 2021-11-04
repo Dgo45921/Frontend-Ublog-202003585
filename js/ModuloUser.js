@@ -44,6 +44,9 @@ function CrearUsuario(){
              else if (respuestafinal.estado ==="fallo"){
                 alert("Por favor revise la contraseña ingresada, esta debe de contener 8 caracteres minimo, una mayúscula, una minúscula, un número y un caracter especial(@#$%^&*()-+?_=,<>/\"\")")
              }
+             else if(respuestafinal.estado ==="invalid"){
+                alert("Ingrese un email válido")
+             }
           })
    }
    else {
@@ -152,6 +155,9 @@ function ModificarUsuario(){
              }
              else if(respuestafinal.estado ==="repetido"){
                 alert("El nombre de usuario o email que usted ingresó ya se encuentra registrado")
+             }
+             else if(respuestafinal.estado ==="invalid"){
+                alert("Ingrese un email válido")
              }
           })
    }
