@@ -261,6 +261,7 @@ function EditUser(){
              }
              else if(respuestafinal.estado ==="invalid"){
                 alert("Ingrese un email válido")
+
              }
           })
    }

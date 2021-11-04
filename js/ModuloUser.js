@@ -46,6 +46,7 @@ function CrearUsuario(){
              }
              else if(respuestafinal.estado ==="invalid"){
                 alert("Ingrese un email válido")
+
              }
           })
    }
@@ -158,6 +159,7 @@ function ModificarUsuario(){
              }
              else if(respuestafinal.estado ==="invalid"){
                 alert("Ingrese un email válido")
+
              }
           })
    }
